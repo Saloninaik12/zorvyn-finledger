@@ -1,0 +1,224 @@
+/**
+ * Button Styling Reference - CSS/Tailwind Classes
+ * Complete state definitions for all button variants
+ */
+
+/* ============================================================
+   PRIMARY BUTTON (CTA - Call To Action)
+   Use for: Main actions like "Add Transaction", submit forms
+   ============================================================ */
+
+.btn-primary {
+  @apply px-5 py-2.5 rounded-lg font-semibold text-white
+    bg-gradient-to-r from-indigo-500 to-purple-600
+    transition-all duration-200 cursor-pointer;
+}
+
+.btn-primary:hover {
+  @apply ring-2 ring-indigo-400/40 
+    shadow-[0_0_20px_rgba(99,102,241,0.7)]
+    scale-[1.02] -translate-y-0.5;
+}
+
+.btn-primary:active {
+  @apply scale-95 shadow-[0_0_10px_rgba(99,102,241,0.5)];
+}
+
+.btn-primary:focus-visible {
+  @apply outline-none ring-4 ring-indigo-400/60;
+}
+
+.btn-primary:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* ============================================================
+   SECONDARY BUTTON (Modal/Form Actions)
+   Use for: Secondary actions like "Update" in modal
+   ============================================================ */
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-md font-medium text-blue-300
+    bg-blue-500/20 border border-blue-500/30
+    transition-all duration-200 cursor-pointer;
+}
+
+.btn-secondary:hover {
+  @apply bg-blue-500/30 shadow-[0_0_12px_rgba(59,130,246,0.5)];
+}
+
+.btn-secondary:active {
+  @apply bg-blue-500/40 shadow-[0_0_8px_rgba(59,130,246,0.3)];
+}
+
+.btn-secondary:focus-visible {
+  @apply outline-none ring-2 ring-blue-400/60;
+}
+
+.btn-secondary:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* ============================================================
+   DANGER BUTTON (Destructive Actions)
+   Use for: Delete, remove, critical actions
+   ============================================================ */
+
+.btn-danger {
+  @apply px-4 py-2 rounded-md font-medium text-red-300
+    bg-red-500/20 border border-red-500/30
+    transition-all duration-200 cursor-pointer;
+}
+
+.btn-danger:hover {
+  @apply bg-red-500/30 shadow-[0_0_12px_rgba(239,68,68,0.5)];
+}
+
+.btn-danger:active {
+  @apply bg-red-500/40 shadow-[0_0_8px_rgba(239,68,68,0.3)];
+}
+
+.btn-danger:focus-visible {
+  @apply outline-none ring-2 ring-red-400/60;
+}
+
+.btn-danger:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* ============================================================
+   GHOST BUTTON (Minimal/Cancel)
+   Use for: Cancel, dismiss, low-priority actions
+   ============================================================ */
+
+.btn-ghost {
+  @apply px-4 py-2 rounded-md font-medium text-gray-300
+    bg-gray-700/40 border border-gray-600/40
+    transition-all duration-200 cursor-pointer;
+}
+
+.btn-ghost:hover {
+  @apply bg-gray-600/50 shadow-[0_0_8px_rgba(107,114,128,0.4)];
+}
+
+.btn-ghost:active {
+  @apply bg-gray-700/60;
+}
+
+.btn-ghost:focus-visible {
+  @apply outline-none ring-2 ring-gray-400/60;
+}
+
+.btn-ghost:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* ============================================================
+   OUTLINE BUTTON (Alternative Style)
+   Use for: Secondary prominent actions
+   ============================================================ */
+
+.btn-outline {
+  @apply px-4 py-2 rounded-md font-medium text-blue-400
+    bg-transparent border-2 border-blue-500/60
+    transition-all duration-200 cursor-pointer;
+}
+
+.btn-outline:hover {
+  @apply bg-blue-500/10 border-blue-400/80 
+    shadow-[0_0_10px_rgba(59,130,246,0.3)];
+}
+
+.btn-outline:active {
+  @apply bg-blue-500/20;
+}
+
+.btn-outline:focus-visible {
+  @apply outline-none ring-2 ring-blue-400/60;
+}
+
+.btn-outline:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* ============================================================
+   SIZE VARIATIONS (Can be combined with any variant)
+   ============================================================ */
+
+.btn-sm {
+  @apply px-3 py-1 text-sm;
+}
+
+.btn-md {
+  @apply px-4 py-2 text-base;
+}
+
+.btn-lg {
+  @apply px-5 py-2.5 text-lg font-semibold;
+}
+
+/* ============================================================
+   STATE CLASSES (Semantic states)
+   ============================================================ */
+
+.btn-loading {
+  @apply opacity-60 pointer-events-none;
+}
+
+.btn-loading::after {
+  content: "";
+  @apply inline-block animate-spin ml-2 border-2 border-current border-r-transparent rounded-full w-4 h-4;
+}
+
+/* ============================================================
+   BUTTON GROUP (For consistent spacing)
+   ============================================================ */
+
+.btn-group {
+  @apply flex gap-3;
+}
+
+.btn-group-vertical {
+  @apply flex flex-col gap-3;
+}
+
+/* ============================================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  .btn-primary:hover {
+    @apply ring-4 ring-indigo-300/60;
+  }
+
+  .btn-secondary:hover {
+    @apply ring-2 ring-blue-300/60;
+  }
+
+  .btn-danger:hover {
+    @apply ring-2 ring-red-300/60;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  button {
+    @apply transition-none;
+  }
+
+  button:hover {
+    @apply scale-100 translate-y-0;
+  }
+
+  button:active {
+    @apply scale-100;
+  }
+}
+
+/* Dark mode (already dark, but adding for consistency) */
+@media (prefers-color-scheme: dark) {
+  .btn-ghost:hover {
+    @apply bg-gray-600/600;
+  }
+}
