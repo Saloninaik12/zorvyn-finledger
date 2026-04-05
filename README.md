@@ -23,7 +23,7 @@ FinLedger is a personal finance dashboard built using React. It helps users trac
 ##  How to Run the Project
 
 1. Clone the repository
-   git clone https://github.com/Saloninaik12/finledger.git
+   git clone https://github.com/Saloninaik12/zorvyn-finledger.git
 
 2. Go to the project folder
    cd finledger
